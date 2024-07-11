@@ -54,7 +54,7 @@ class MqttClient(QThread):
             except Exception as e:
                 print(f"Error : {e}")
                 self._ui.textBrowser.insertPlainText(f"FAILED TO CONNECT: {e}\n")
-        else: 
+        else:
             self._ui.textBrowser.insertPlainText("VALUES DO NOT MATCH. CANNOT CONNECT- TRY AGAIN.\n")
 
     def check_right_values(self):
@@ -64,7 +64,7 @@ class MqttClient(QThread):
                 and (self.port== self.right_port))
 
     def on_connect(self, client, userdata, flags, rc):  # CALLBACK FUNC1
-        if rc== 0: 
+        if rc== 0:
             self._ui.textBrowser.insertPlainText("CONNECTED TO MQTT BROKER SERVER SUCCESSFULLY. \n")
             self.connected_signal.emit()
         else:
@@ -119,7 +119,7 @@ class MainWindow(QMainWindow):
     def on_messageReceived(self, message, topic): # 브로커로부터 메시지를 수신하면 호출된다
         current_date= QDateTime.currentDateTime().toString()
         data= message.data().decode("utf-8")
-        if topic in self._mqtt_client.published_topics:
+        if topic in self._mqtt_client.subscribed_topics and topic in self._mqtt_client.published_topics:
             self._ui.textBrowser.insertPlainText(f"MESSAGE PUBLISHED AND RECEIVED: {current_date}\n TOPIC : {topic}\n MESSAGE: {data}\n")
         else: self._ui.textBrowser.insertPlainText(f"MESSAGE RECEIVED: {current_date} \n TOPIC: {topic}\n MESSAGE: {data}\n")
         # self._ui.textBrowser.insertPlainText(content)
