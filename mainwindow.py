@@ -26,13 +26,13 @@ class MqttClient(QThread):
         self.id= ''
         self.pw= ''
         self.host= ''
-        self.port= 0
+        self.port= None
 
         self.right_id = ''
         self.right_pw = ''
 
         self.right_host = ''
-        self.right_port = ''
+        self.right_port = 0
 
         self.subscribed_topics= set()
         self.published_topics= set()
@@ -117,8 +117,8 @@ class MainWindow(QMainWindow):
 
     @Slot(QByteArray, str)
     def on_messageReceived(self, message, topic): # 브로커로부터 메시지를 수신하면 호출된다
-        current_date= QDateTime.currentDateTime().toString()
-        data= message.data().decode("utf-8")
+        current_date = QDateTime.currentDateTime().toString()
+        data = message.data().decode("utf-8")
         if topic in self._mqtt_client.subscribed_topics and topic in self._mqtt_client.published_topics:
             self._ui.textBrowser.insertPlainText(f"MESSAGE PUBLISHED AND RECEIVED: {current_date}\n TOPIC : {topic}\n MESSAGE: {data}\n")
         else: self._ui.textBrowser.insertPlainText(f"MESSAGE RECEIVED: {current_date} \n TOPIC: {topic}\n MESSAGE: {data}\n")
@@ -196,8 +196,8 @@ class MainWindow(QMainWindow):
         message= self._ui.msg_txtEd.text().encode("utf-8")
         self._mqtt_client.publish(topic, message)
         self._mqtt_client.published_topics.add(topic)
-        if topic in self._mqtt_client.subscribed_topics and topic in self._mqtt_client.published_topics:
-            self._ui.textBrowser.insertPlainText("")
+        if topic in self._mqtt_client.subscribed_topics:
+            self._ui.textBrowser.insertPlainText("") # f"MESSAGE PUBLISHED AND RECEIVED:\n TOPIC: {topic}\n MESSAGE: {message.decode()}\n"
         else: self._ui.textBrowser.insertPlainText(f"MESSAGE PUBLISHED:\n TOPIC: {topic}\n MESSAGE: {message.decode()}\n")
 
     @Slot()
