@@ -23,16 +23,16 @@ class MqttClient(QThread):
         self.client= mqtt.Client()  # MqttClient 스레드 생성
         self.parent= parent
         self._ui= parent._ui
-        self.id= ''
-        self.pw= ''
-        self.host= ''
-        self.port= ''
+        self.id= 'test'
+        self.pw= 'test'
+        self.host= '192.168.0.121'
+        self.port= '1883'
 
-        self.right_id = ''
-        self.right_pw = ''
+        self.right_id = 'test'
+        self.right_pw = 'test'
 
-        self.right_host = ''
-        self.right_port = ''
+        self.right_host = '192.168.0.121'
+        self.right_port = '1883'
 
         self.subscribed_topics= set()
         self.published_topics= set()
@@ -119,7 +119,7 @@ class MainWindow(QMainWindow):
     def on_messageReceived(self, message, topic): # 브로커로부터 메시지를 수신하면 호출된다
         current_date= QDateTime.currentDateTime().toString()
         data= message.data().decode("utf-8")
-        if topic in self._mqtt_client.published_topics and topic in self._mqtt_client.subscribed_topics:
+        if topic in self._mqtt_client.published_topics:
             self._ui.textBrowser.insertPlainText(f"MESSAGE PUBLISHED AND RECEIVED: {current_date}\n TOPIC : {topic}\n MESSAGE: {data}\n")
         else: self._ui.textBrowser.insertPlainText(f"MESSAGE RECEIVED: {current_date} \n TOPIC: {topic}\n MESSAGE: {data}\n")
         # self._ui.textBrowser.insertPlainText(content)
@@ -135,6 +135,8 @@ class MainWindow(QMainWindow):
         if self._mqtt_client.isRunning()== True: # DISCONNECT FROM SERVER
             self.brokerDisconnected()
 
+            self._ui.textBrowser.clear()
+            self._ui.textBrowser.insertPlainText("DISCONNECTED FROM SERVER.\n")
             self._ui.id_txtEd.setEnabled(True)
             self._ui.id_txtEd.clear()
             self._ui.pw_txtEd.clear()
@@ -210,6 +212,3 @@ class MainWindow(QMainWindow):
         self._mqtt_client.terminate()
         self._mqtt_client.quit()
         self._mqtt_client.wait()
-
-        self._ui.textBrowser.clear()
-        self._ui.textBrowser.insertPlainText("DISCONNECTED FROM SERVER.\n")
