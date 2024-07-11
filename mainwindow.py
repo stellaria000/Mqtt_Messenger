@@ -23,16 +23,16 @@ class MqttClient(QThread):
         self.client= mqtt.Client()  # MqttClient 스레드 생성
         self.parent= parent
         self._ui= parent._ui
-        self.id= 'test'
-        self.pw= 'test'
-        self.host= '192.168.0.121'
-        self.port= '1883'
+        self.id= ''
+        self.pw= ''
+        self.host= ''
+        self.port= ''
 
-        self.right_id = 'test'
-        self.right_pw = 'test'
+        self.right_id = ''
+        self.right_pw = ''
 
-        self.right_host = '192.168.0.121'
-        self.right_port = '1883'
+        self.right_host = ''
+        self.right_port = ''
 
         self.subscribed_topics= set()
         self.published_topics= set()
