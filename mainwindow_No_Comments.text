@@ -4,6 +4,8 @@
     'broker.hivemq.com' AND THE PORT NUMBER 1883, AND CONNECT TO IT. YOU CAN THEN SUBSCRIBE TO A TOPIC
     AND SEND A MESSAGE, WHICH YOU ALSO RECEIVE.
 '''
+from PySide6.QtWidgets import QMainWindow
+
 
 class MqttClient(QThread):
     message_signal= Signal(QByteArray, str)
@@ -73,6 +75,11 @@ class MqttClient(QThread):
     def subscribe(self, topic): self.client.subscribe(topic)
 
     def disconnect(self): self.client.disconnect()
+
+
+def ui():
+    pass
+
 
 class MainWindow(QMainWindow):
     def __init__(self, parent= None):
