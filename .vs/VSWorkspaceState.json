@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Mqtt_Messenger_CS",
+    "\\Mqtt_Messenger_CS\\WindowsFormsApp1"
   ],
-  "SelectedNode": "\\Mqtt_Messenger_CS",
+  "SelectedNode": "\\Mqtt_Messenger_CS\\WindowsFormsApp1\\WindowsFormsApp1.sln",
   "PreviewInSolutionExplorer": false
 }

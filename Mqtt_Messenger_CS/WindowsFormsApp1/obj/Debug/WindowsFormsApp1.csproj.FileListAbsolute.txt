@@ -1,0 +1,10 @@
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Project\Mqtt_msg\Mqtt_messesnger\Mqtt_Messenger_CS\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
