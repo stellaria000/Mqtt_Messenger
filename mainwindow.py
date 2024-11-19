@@ -23,15 +23,22 @@ class MqttClient(QThread):
         self.client= mqtt.Client()  # MqttClient 스레드 생성
         self.parent= parent
         self._ui= parent._ui
-        self.id= 'test'
-        self.pw= 'test'
-        self.host= '192.168.0.121'
-        self.port= '1883'
+        self.id= ''
+        self.pw= ''
+        self.host= ''
+        self.port= ''
 
+<<<<<<< HEAD
         self.right_id = 'test'
         self.right_pw = 'test'
         self.right_host = '192.168.0.121'
         self.right_port = '1883'
+=======
+        self.right_id = ''
+        self.right_pw = ''
+        self.right_host = ''
+        self.right_port = ''
+>>>>>>> 0abd562cca6571acbe7ab51488bee0589f0dc750
 
         self.subscribed_topics= set()
         self.published_topics= set()
@@ -97,10 +104,10 @@ class MainWindow(QMainWindow):
         self._mqtt_client.connected_signal.connect(self.updateLogStateChange)
         self._mqtt_client.disconnected_signal.connect(self.brokerDisconnected)
 
-        self._ui.id_txtEd.setText('test')
-        self._ui.pw_txtEd.setText('test')
-        self._ui.host_txtEd.setText('192.168.0.121')
-        self._ui.port_txtEd.setText('1883')
+        self._ui.id_txtEd.setText('')
+        self._ui.pw_txtEd.setText('')
+        self._ui.host_txtEd.setText('')
+        self._ui.port_txtEd.setText('')
         self._ui.id_txtEd.textChanged.connect(self._mqtt_client.setId)
         self._ui.pw_txtEd.textChanged.connect(self._mqtt_client.setPw)
         self._ui.host_txtEd.textChanged.connect(self._mqtt_client.setHost)
@@ -217,4 +224,8 @@ class MainWindow(QMainWindow):
     @Slot()
     def brokerDisconnected(self):
         self._mqtt_client.disconnect()
+<<<<<<< HEAD
         self._mqtt_client.wait()
+=======
+        self._mqtt_client.wait()
+>>>>>>> 0abd562cca6571acbe7ab51488bee0589f0dc750
