@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 
         private System.ComponentModel.IContainer components = null;
         private GroupBox groupBox, hostPortBox, topicBox, messageBox;
-        private FlowLayoutPanel hostPortPanel, topicPanel, messagePanel;
+        private FlowLayoutPanel mainPanel, hostPortPanel, topicPanel, messagePanel;
         private Panel line;
         private Label host_txtLb, port_txtLb, tpc_txtLb, msg_txtLb;
         private TextBox host_txtEd, port_txtEd, tpc_txtEd, msg_txtEd;
@@ -59,15 +59,17 @@ namespace WindowsFormsApp1
             this.msg_txtEd = new System.Windows.Forms.TextBox();
             this.pub_btn = new System.Windows.Forms.Button();
             this.close_btn = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.hostPortPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.topicPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.messagePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.line = new System.Windows.Forms.Panel();
-            this.groupBox.SuspendLayout();
-            this.hostPortBox.SuspendLayout();
-            this.topicBox.SuspendLayout();
-            this.messageBox.SuspendLayout();
-            this.SuspendLayout();
+            //this.groupBox.SuspendLayout();
+            //this.hostPortBox.SuspendLayout();
+            //this.topicBox.SuspendLayout();
+            //this.messageBox.SuspendLayout();
+            //this.SuspendLayout();
+
             // 
             // groupBox
             // 
@@ -76,9 +78,9 @@ namespace WindowsFormsApp1
             this.groupBox.Controls.Add(this.textBrowser);
             this.groupBox.Controls.Add(this.messageBox);
             this.groupBox.Controls.Add(this.close_btn);
-            this.groupBox.Location = new System.Drawing.Point(12, 12);
+            this.groupBox.Location = new System.Drawing.Point(10, 0);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(776, 576);
+            this.groupBox.Size = new System.Drawing.Size(600, 450);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "MQTT Messenger";
@@ -89,9 +91,9 @@ namespace WindowsFormsApp1
             this.hostPortBox.Controls.Add(this.host_txtEd);
             this.hostPortBox.Controls.Add(this.port_txtLb);
             this.hostPortBox.Controls.Add(this.port_txtEd);
-            this.hostPortBox.Location = new System.Drawing.Point(6, 20);
+            this.hostPortBox.Location = new System.Drawing.Point(20, 6);
             this.hostPortBox.Name = "hostPortBox";
-            this.hostPortBox.Size = new System.Drawing.Size(764, 65);
+            this.hostPortBox.Size = new System.Drawing.Size(531, 65);
             this.hostPortBox.TabIndex = 1;
             this.hostPortBox.TabStop = false;
             // 
@@ -107,12 +109,12 @@ namespace WindowsFormsApp1
             // 
             this.host_txtEd.Location = new System.Drawing.Point(73, 20);
             this.host_txtEd.Name = "host_txtEd";
-            this.host_txtEd.Size = new System.Drawing.Size(278, 21);
+            this.host_txtEd.Size = new System.Drawing.Size(178, 21);
             this.host_txtEd.TabIndex = 1;
             // 
             // port_txtLb
             // 
-            this.port_txtLb.Location = new System.Drawing.Point(357, 24);
+            this.port_txtLb.Location = new System.Drawing.Point(263, 21);
             this.port_txtLb.Name = "port_txtLb";
             this.port_txtLb.Size = new System.Drawing.Size(50, 20);
             this.port_txtLb.TabIndex = 2;
@@ -121,9 +123,9 @@ namespace WindowsFormsApp1
             // 
             // port_txtEd
             // 
-            this.port_txtEd.Location = new System.Drawing.Point(413, 20);
+            this.port_txtEd.Location = new System.Drawing.Point(319, 20);
             this.port_txtEd.Name = "port_txtEd";
-            this.port_txtEd.Size = new System.Drawing.Size(345, 21);
+            this.port_txtEd.Size = new System.Drawing.Size(180, 21);
             this.port_txtEd.TabIndex = 3;
             // 
             // topicBox
@@ -131,60 +133,58 @@ namespace WindowsFormsApp1
             this.topicBox.Controls.Add(this.tpc_txtLb);
             this.topicBox.Controls.Add(this.tpc_txtEd);
             this.topicBox.Controls.Add(this.sub_btn);
-            this.topicBox.Location = new System.Drawing.Point(6, 91);
+            this.topicBox.Location = new System.Drawing.Point(20, 280);
             this.topicBox.Name = "topicBox";
-            this.topicBox.Size = new System.Drawing.Size(764, 63);
+            this.topicBox.Size = new System.Drawing.Size(531, 30);
             this.topicBox.TabIndex = 2;
             this.topicBox.TabStop = false;
             // 
             // tpc_txtLb
             // 
-            this.tpc_txtLb.Location = new System.Drawing.Point(17, 27);
+            this.tpc_txtLb.Location = new System.Drawing.Point(3, 0);
             this.tpc_txtLb.Name = "tpc_txtLb";
             this.tpc_txtLb.Size = new System.Drawing.Size(50, 20);
             this.tpc_txtLb.TabIndex = 0;
             this.tpc_txtLb.Text = "Topic";
-            this.tpc_txtLb.Click += new System.EventHandler(this.tpc_txtLb_Click);
             // 
             // tpc_txtEd
             // 
-            this.tpc_txtEd.Location = new System.Drawing.Point(73, 20);
+            this.tpc_txtEd.Location = new System.Drawing.Point(59, 3);
             this.tpc_txtEd.Name = "tpc_txtEd";
-            this.tpc_txtEd.Size = new System.Drawing.Size(579, 21);
+            this.tpc_txtEd.Size = new System.Drawing.Size(200, 21);
             this.tpc_txtEd.TabIndex = 1;
-            this.tpc_txtEd.TextChanged += new System.EventHandler(this.tpc_txtEd_TextChanged);
             // 
             // sub_btn
             // 
-            this.sub_btn.Location = new System.Drawing.Point(658, 20);
+            this.sub_btn.Location = new System.Drawing.Point(265, 3);
             this.sub_btn.Name = "sub_btn";
             this.sub_btn.Size = new System.Drawing.Size(100, 25);
             this.sub_btn.TabIndex = 2;
             this.sub_btn.Text = "Subscribe";
-            this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
             // textBrowser
             // 
-            this.textBrowser.Location = new System.Drawing.Point(6, 160);
+            this.textBrowser.Location = new System.Drawing.Point(20, 77);
             this.textBrowser.Name = "textBrowser";
-            this.textBrowser.Size = new System.Drawing.Size(764, 313);
+            this.textBrowser.Size = new System.Drawing.Size(531, 200);
             this.textBrowser.TabIndex = 0;
             this.textBrowser.Text = "";
+            this.textBrowser.TextChanged += new System.EventHandler(this.textBrowser_TextChanged);
             // 
             // messageBox
             // 
             this.messageBox.Controls.Add(this.msg_txtLb);
             this.messageBox.Controls.Add(this.msg_txtEd);
             this.messageBox.Controls.Add(this.pub_btn);
-            this.messageBox.Location = new System.Drawing.Point(6, 479);
+            this.messageBox.Location = new System.Drawing.Point(34, 346);
             this.messageBox.Name = "messageBox";
-            this.messageBox.Size = new System.Drawing.Size(764, 55);
+            this.messageBox.Size = new System.Drawing.Size(531, 30);
             this.messageBox.TabIndex = 3;
             this.messageBox.TabStop = false;
             // 
             // msg_txtLb
             // 
-            this.msg_txtLb.Location = new System.Drawing.Point(17, 23);
+            this.msg_txtLb.Location = new System.Drawing.Point(3, 0);
             this.msg_txtLb.Name = "msg_txtLb";
             this.msg_txtLb.Size = new System.Drawing.Size(70, 20);
             this.msg_txtLb.TabIndex = 0;
@@ -192,14 +192,14 @@ namespace WindowsFormsApp1
             // 
             // msg_txtEd
             // 
-            this.msg_txtEd.Location = new System.Drawing.Point(93, 20);
+            this.msg_txtEd.Location = new System.Drawing.Point(79, 3);
             this.msg_txtEd.Name = "msg_txtEd";
-            this.msg_txtEd.Size = new System.Drawing.Size(559, 21);
+            this.msg_txtEd.Size = new System.Drawing.Size(300, 21);
             this.msg_txtEd.TabIndex = 1;
             // 
             // pub_btn
             // 
-            this.pub_btn.Location = new System.Drawing.Point(664, 20);
+            this.pub_btn.Location = new System.Drawing.Point(385, 3);
             this.pub_btn.Name = "pub_btn";
             this.pub_btn.Size = new System.Drawing.Size(100, 25);
             this.pub_btn.TabIndex = 2;
@@ -207,11 +207,18 @@ namespace WindowsFormsApp1
             // 
             // close_btn
             // 
-            this.close_btn.Location = new System.Drawing.Point(670, 540);
+            this.close_btn.Location = new System.Drawing.Point(460, 470);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(100, 30);
             this.close_btn.TabIndex = 4;
             this.close_btn.Text = "Close";
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(200, 100);
+            this.mainPanel.TabIndex = 0;
             // 
             // hostPortPanel
             // 
@@ -243,10 +250,10 @@ namespace WindowsFormsApp1
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.groupBox);
             this.Name = "Form1";
-            this.Text = "MQTT Messenger";
+            this.Text = "Network Connection UI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox.ResumeLayout(false);
             this.hostPortBox.ResumeLayout(false);
@@ -256,6 +263,7 @@ namespace WindowsFormsApp1
             this.messageBox.ResumeLayout(false);
             this.messageBox.PerformLayout();
             this.ResumeLayout(false);
+
 
         }
 

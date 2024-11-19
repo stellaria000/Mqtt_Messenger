@@ -41,5 +41,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void textBrowser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
