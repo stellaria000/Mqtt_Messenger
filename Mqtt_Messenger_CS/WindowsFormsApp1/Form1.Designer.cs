@@ -53,6 +53,7 @@ namespace WindowsFormsApp1
             this.tpc_txtLb = new System.Windows.Forms.Label();
             this.tpc_txtEd = new System.Windows.Forms.TextBox();
             this.sub_btn = new System.Windows.Forms.Button();
+            this.textBrowser = new System.Windows.Forms.RichTextBox();
             this.messageBox = new System.Windows.Forms.GroupBox();
             this.msg_txtLb = new System.Windows.Forms.Label();
             this.msg_txtEd = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@ namespace WindowsFormsApp1
             this.topicPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.messagePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.line = new System.Windows.Forms.Panel();
-            this.textBrowser = new System.Windows.Forms.RichTextBox();
             this.groupBox.SuspendLayout();
             this.hostPortBox.SuspendLayout();
             this.topicBox.SuspendLayout();
@@ -73,6 +73,7 @@ namespace WindowsFormsApp1
             // 
             this.groupBox.Controls.Add(this.hostPortBox);
             this.groupBox.Controls.Add(this.topicBox);
+            this.groupBox.Controls.Add(this.textBrowser);
             this.groupBox.Controls.Add(this.messageBox);
             this.groupBox.Controls.Add(this.close_btn);
             this.groupBox.Location = new System.Drawing.Point(12, 12);
@@ -162,6 +163,14 @@ namespace WindowsFormsApp1
             this.sub_btn.Text = "Subscribe";
             this.sub_btn.Click += new System.EventHandler(this.sub_btn_Click);
             // 
+            // textBrowser
+            // 
+            this.textBrowser.Location = new System.Drawing.Point(6, 160);
+            this.textBrowser.Name = "textBrowser";
+            this.textBrowser.Size = new System.Drawing.Size(764, 313);
+            this.textBrowser.TabIndex = 0;
+            this.textBrowser.Text = "";
+            // 
             // messageBox
             // 
             this.messageBox.Controls.Add(this.msg_txtLb);
@@ -231,14 +240,6 @@ namespace WindowsFormsApp1
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(200, 100);
             this.line.TabIndex = 0;
-            // 
-            // textBrowser
-            // 
-            this.textBrowser.Location = new System.Drawing.Point(500, 100);
-            this.textBrowser.Name = "textBrowser";
-            this.textBrowser.Size = new System.Drawing.Size(100, 96);
-            this.textBrowser.TabIndex = 0;
-            this.textBrowser.Text = "";
             // 
             // Form1
             // 
